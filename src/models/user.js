@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
-const JWT_SECRET = config.get('jwtsecret');
+const JWT_SECRET = process.env.JWT_SECRET || config.get('jwtsecret');
 const Contact = require('./contact');
 
 const userSchema = new mongoose.Schema({
